@@ -11,22 +11,22 @@ function greet(name){
  * It may have a few small bugs...
  */
 function invertCase(text) {
-  const LOWER_CASE = "abedefghijklmnoqprstuvwxyz";
+  const LOWER_CASE = "abcdefghijklmnopqrstuvwxyz";
   const UPPER_CASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   let tempString = '';
   for(let i=0; i<text.length; i++){
     let char = text[i];
     if(LOWER_CASE.indexOf(char) != -1){ //is lowercase
-      let upper = UPPER_CASE[ LOWER_CASE.indexOf(char) ];
+      let upper = UPPER_CASE.charAt(LOWER_CASE.indexOf(char));
       tempString += upper;
     }
     else { //is uppercase
-      let lower = LOWER_CASE [ LOWER_CASE.indexOf(char) ];
+      let lower = LOWER_CASE.charAt(UPPER_CASE.indexOf(char));
       tempString += lower;
     }
   }
-  return text;
+  return tempString;
 }
 
 
